@@ -1,10 +1,6 @@
-import re
-import pandas as pd
+import re #comprueba si el texto contiene un patron
+import pandas as pd #genera archico xlsx
 
-
-# leer una linea de archivo de texto
-# analizar usuario
-# analizar fecha
 
 archivo = open("Chat.txt", "r")
 
@@ -16,36 +12,36 @@ def crear_archivo(nombre, array):
     })
 
     # Guardar el DataFrame en un archivo Excel
-    df.to_excel('veces_jesus.xlsx', index=False)
+    df.to_excel(f'{nombre}_frecuencia.xlsx', index=False)
 
     print("Archivo Excel creado exitosamente.")
 
 
 
 
-
-
-
 def es_fecha(texto):
+    # define the patron of regular expresion for a dd/mm/yyyy format
     # Definir el patrón de la expresión regular para el formato dd/mm/yyyy
-    patron = r'^\d{2}/\d{2}/\d{4}$'
-    patron2 = r'^\d{1}/\d{2}/\d{4}$'
+    patron1 = r'^\d{2}/\d{2}/\d{4}$' # dia con 2 digitos, mes con 2 digitos
+    patron2 = r'^\d{1}/\d{2}/\d{4}$' # dia con 1 digitos, mes con 2 digitos
     
-    patron3 = r'^\d{1}/\d{1}/\d{4}$'
-    patron4 = r'^\d{2}/\d{1}/\d{4}$'
+    patron3 = r'^\d{1}/\d{1}/\d{4}$' # dia con 1 digitos, mes con 1 digitos
+    patron4 = r'^\d{2}/\d{1}/\d{4}$' # dia con 2 digitos, mes con 1 digitos
     
-    # Comprobar si el texto coincide con el patrón
-    if re.match(patron, texto) or re.match(patron2, texto) or re.match(patron3, texto) or re.match(patron4, texto) :
+    # Comprobar si el texto coincide todas las convianciones de patrones
+    if re.match(patron1, texto) or re.match(patron2, texto) or re.match(patron3, texto) or re.match(patron4, texto) :
         return True
     else:
         return False
 
-
+# ask how many times someone speaked in one day
+# pregunta cantas veces hablo cada uno un dia en concreto
 def preguntar_dia(manu, tomas, jesus, dia):
 
     print("manu hablo: ", manu[dia])
     print("tomas hablo: ", tomas[dia])
     print("jesus hablo: ", jesus[dia])
+
 
 
 def contar():
@@ -54,9 +50,9 @@ def contar():
     manu    = 0
     jesus   = 0
 
-    veces_dia_tomas = [0] * 300
-    veces_dia_manu = [0] * 300
-    veces_dia_jesus = [0] * 300
+    tomas_frecuencia = [0] * 300
+    manu_frecuencia = [0] * 300
+    jesus_frecuencia = [0] * 300
 
     dia = "3"
     
@@ -105,15 +101,15 @@ def contar():
 
 
             if "Tomás" in linea:
-                veces_dia_tomas[i] = veces_dia_tomas[i] + 1;
+                tomas_frecuencia[i] = tomas_frecuencia[i] + 1;
                 tomas+=1
                 #print("tomas = ", tomas)
             if "Manuel Dios Campos"   in linea:
-                veces_dia_manu[i] = veces_dia_manu[i] + 1
+                manu_frecuencia[i] = manu_frecuencia[i] + 1
                 manu+=1
                 #print("manu = ", manu)
             if "Jesus Gomez"   in linea:
-                veces_dia_jesus[i] = veces_dia_jesus[i] + 1
+                jesus_frecuencia[i] = jesus_frecuencia[i] + 1
                 jesus+=1
             
 
@@ -131,13 +127,13 @@ def contar():
     #print("tomas = ", tomas)
     #print("jesus =", jesus )
 
-    #print("veces_manu = ", veces_dia_manu)
-    #print("veces_tomas = ", veces_dia_tomas)
-    #print("veces jesus", veces_dia_jesus)
+    #print("veces_manu = ", manu_frecuencia)
+    #print("veces_tomas = ", tomas_frecuencia)
+    #print("veces jesus", jesus_frecuencia)
 
 
-    crear_archivo(manu, veces_dia_jesus)
-    #preguntar_dia(veces_dia_manu, veces_dia_tomas, veces_dia_jesus, 51)
+    crear_archivo("jesus", jesus_frecuencia)
+    #preguntar_dia(manu_frecuencia, tomas_frecuencia, jesus_frecuencia, 51)
 
 
 contar()
