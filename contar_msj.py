@@ -1,32 +1,9 @@
-import re #comprueba si el texto contiene un patron
-import pandas as pd #genera archico xlsx
-
+from functions.crear_archivo import crear_archivo
 from functions.es_fecha  import es_fecha
+
+
 #abre el archivo con el chat, en un futuro debo modularizar el nombre
 archivo = open("Chat.txt", "r")
-
-
-'''
-crea un archivo xlsx (casillas tipicamente conocido como exel pero no es exel porque
-exel es el formato de microsofot y originalmente se llama xlsx solo que ellos
-quisieron popularisar tanto su nombre para que la gente no le llame formato de
-casillas sino exel, como con el confort que no se llama confort sino papel igenico 
-porque confort es una marca, en resumen te odio microsoft)
-'''
-def crear_archivo(nombre, array):
-
-    df = pd.DataFrame({
-        'Día': list(range(1, len(array) + 1)),  # Genera una lista de números de posición (1, 2, 3, ...)
-        'Frecuencia': array
-    })
-
-    # Guardar el DataFrame en un archivo Excel
-    df.to_excel(f'./tablas/{nombre}_frecuencia.xlsx', index=False)
-
-    print("Archivo Excel creado exitosamente.")
-
-
-
 
 
 
@@ -49,9 +26,11 @@ def contar():
     jesus   = 0 ##total de veces que hablo jesus
 
     # *300 es el largo del array, debo cambiarlo por la cantidad de dias trasncurren
-    tomas_frecuencia = [0] * 250
-    manu_frecuencia = [0] * 250
-    jesus_frecuencia = [0] * 250
+    tomas_frecuencia = [0] * 249
+    manu_frecuencia = [0] * 249
+    jesus_frecuencia = [0] * 249
+
+    frec_acumulada = [0] *249
 
     dia = "3" #inizializa dia con el numero del primer dia, debo estandarizarlo
     cantidad_dias = 0 #cuenta la cantidad de dias que van trasncurriendo
@@ -87,9 +66,13 @@ def contar():
             dia_vector = linea.split("/")
             dia = dia_vector[0] #guarda el dia ej 24/12/2024 -> dia = 24
             
+            
             # el dia cambio cuando el dia actual y el anterior son diferentes
-            if dia != dia_anterior:
+            if dia != dia_anterior: 
                 i+=1
+                #frec_acumulada[i] = frec_acumulada[i-1]
+                #frec_acumulada[i-1] = frec_acumulada[i-1] / i
+                
                 cantidad_dias+=1
 
             #en el caso de machear un nombre guarda la frecuencia del susodicho
@@ -102,6 +85,7 @@ def contar():
                 manu+=1
                 #print("manu = ", manu)
             if "Jesus Gomez"   in linea:
+                frec_acumulada[i] = frec_acumulada[i] + 1
                 jesus_frecuencia[i] = jesus_frecuencia[i] + 1
                 jesus+=1
             
@@ -111,13 +95,15 @@ def contar():
 
     archivo.close()
     # Cierra el archivo después de leer
+    
+    #frec_acumulada[i] = frec_acumulada[i] / (i +1)
 
 
-    crear_archivo("Manu     ", manu_frecuencia  )
-    crear_archivo("Tomas    ", tomas_frecuencia )
-    crear_archivo("Jesus    ", jesus_frecuencia )
+    #crear_archivo("Manu     ", manu_frecuencia  )
+    #crear_archivo("Tomas    ", tomas_frecuencia )
+    #crear_archivo("Jesus_acumulado    ", frec_acumulada )
 
-    preguntar_dia(manu_frecuencia, tomas_frecuencia, jesus_frecuencia, 51)
+    #preguntar_dia(manu_frecuencia, tomas_frecuencia, jesus_frecuencia, 51)
 
 
 contar()

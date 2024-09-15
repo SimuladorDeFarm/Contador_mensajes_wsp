@@ -1,5 +1,15 @@
 import re #comprueba si el texto contiene un patron
 
+'''
+crea un archivo xlsx (casillas tipicamente conocido como exel pero no es exel porque
+exel es el formato de microsofot y originalmente se llama xlsx solo que ellos
+quisieron popularisar tanto su nombre para que la gente no le llame formato de
+casillas sino exel, como con el confort que no se llama confort sino papel igenico 
+porque confort es una marca, en resumen te odio microsoft)
+'''
+
+
+
 def es_fecha(texto):
     # define the patron of regular expresion for a dd/mm/yyyy format
     # Definir el patrón de la expresión regular para el formato dd/mm/yyyy
