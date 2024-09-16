@@ -23,8 +23,9 @@ def preguntar_dia(manu, tomas, jesus, dia):
 
 def contar():
     
-    personas = ["jesus", "manuel", "tomas"]
-    print(len(personas))
+    personas = ["Tomás","Manuel Dios Campos", "Jesus Gomez", "Lukas Santi Exdev Linux Alumno Destacado Sangria"]
+    #print(len(personas))
+
 
 
     tomas   = 0 #total de veces que hablo tomas
@@ -33,7 +34,9 @@ def contar():
 
     # *300 es el largo del array, debo cambiarlo por la cantidad de dias trasncurren
 
+    j = len(personas)
     n = contar_dias()
+    frecuencia = [[0] * n for _ in range(j)]
 
     tomas_frecuencia = [0] * n
     manu_frecuencia = [0] * n
@@ -83,36 +86,38 @@ def contar():
                 #frec_acumulada[i-1] = frec_acumulada[i-1] / i
                 
                 cantidad_dias+=1
-
-            #en el caso de machear un nombre guarda la frecuencia del susodicho
-            if "Tomás" in linea:
-                tomas_frecuencia[i] = tomas_frecuencia[i] + 1
-                tomas+=1
-                #print("tomas = ", tomas)
-            if "Manuel Dios Campos"   in linea:
-                manu_frecuencia[i] = manu_frecuencia[i] + 1
-                manu+=1
-                #print("manu = ", manu)
-            if "Jesus Gomez"   in linea:
-                frec_acumulada[i] = frec_acumulada[i] + 1
-                jesus_frecuencia[i] = jesus_frecuencia[i] + 1
-                jesus+=1
             
+            z = 0
+            while z < j :
+
+                if  personas[z] in linea:
+                    frecuencia[z][i] = frecuencia[z][i] +1   
+                
+                z+=1 
+
+
 
         #lee la siguiente linea
         linea = archivo.readline()
 
     archivo.close()
-    # Cierra el archivo después de leer
-    
-    #frec_acumulada[i] = frec_acumulada[i] / (i +1)
 
+    for fila in frecuencia:
+        print(fila)
 
-    #crear_archivo("Manu", manu_frecuencia  )
-    #crear_archivo("Tomas", tomas_frecuencia )
-    #crear_archivo("jesus", jesus_frecuencia )
+    array_aux = [0] * n
+    z = 0
+    x = 0
+    while z < j:
+        x = 0
+        while x < n:
+            array_aux[x] = frecuencia[z][x]
+            x+=1
 
-    #preguntar_dia(manu_frecuencia, tomas_frecuencia, jesus_frecuencia, 51)
+        print(array_aux)
+        crear_archivo(personas[z], array_aux, n)
+        z+=1
 
 
 contar()
+
