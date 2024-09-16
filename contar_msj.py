@@ -22,6 +22,9 @@ def preguntar_dia(manu, tomas, jesus, dia):
 
 
 def contar():
+    
+    personas = ["jesus", "manuel", "tomas"]
+    print(len(personas))
 
 
     tomas   = 0 #total de veces que hablo tomas
@@ -105,9 +108,9 @@ def contar():
     #frec_acumulada[i] = frec_acumulada[i] / (i +1)
 
 
-    crear_archivo("Manu", manu_frecuencia  )
-    crear_archivo("Tomas", tomas_frecuencia )
-    crear_archivo("jesus", jesus_frecuencia )
+    #crear_archivo("Manu", manu_frecuencia  )
+    #crear_archivo("Tomas", tomas_frecuencia )
+    #crear_archivo("jesus", jesus_frecuencia )
 
     #preguntar_dia(manu_frecuencia, tomas_frecuencia, jesus_frecuencia, 51)
 

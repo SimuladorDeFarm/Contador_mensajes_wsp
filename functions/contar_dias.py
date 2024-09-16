@@ -18,21 +18,9 @@ def contar_dias():
 
     while linea:
 
-        '''
-        Algunos mensajes mandados son tan largos que usan la siguiente linea del
-         archivo, asique en vez de aparecer fecha, hora, persona, mensaje solo parece
-         mensaje ej: linea 22 del archivo, 
-        '''
         fecha_v = linea.split(",") 
         fecha = fecha_v[0]
 
-        '''
-        para solucionar el problema anterior hay que identificar cuales son
-        las linas reales y las que que contienen error, las lineas reales
-        inician co  fecha en formato dd/mm/yyyy por lo que creamos una funcion
-        que resive como parametro la fecha (todo el contenido del string hasta la primera ",") y en el caso de ser una linea real el programa se ejecuta, sino
-        entonces no hace nada y pasa a la siguiente linea del archivo
-        '''
         if es_fecha(fecha) == True:
 
             # Usar split para dividir el string por "/"            
