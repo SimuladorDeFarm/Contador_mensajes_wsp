@@ -5,7 +5,6 @@ from functions.contar_dias import contar_dias
 #abre el archivo con el chat, en un futuro debo modularizar el nombre
 archivo = open("Chat.txt", "r")
 
-
 #print(contar_dias())
 
 # ask how many times someone speaked in one day
@@ -30,11 +29,14 @@ def contar():
     jesus   = 0 ##total de veces que hablo jesus
 
     # *300 es el largo del array, debo cambiarlo por la cantidad de dias trasncurren
-    tomas_frecuencia = [0] * 249
-    manu_frecuencia = [0] * 249
-    jesus_frecuencia = [0] * 249
 
-    frec_acumulada = [0] *249
+    n = contar_dias()
+
+    tomas_frecuencia = [0] * n
+    manu_frecuencia = [0] * n
+    jesus_frecuencia = [0] * n
+
+    frec_acumulada = [0] * n
 
     dia = "3" #inizializa dia con el numero del primer dia, debo estandarizarlo
     cantidad_dias = 0 #cuenta la cantidad de dias que van trasncurriendo
@@ -81,7 +83,7 @@ def contar():
 
             #en el caso de machear un nombre guarda la frecuencia del susodicho
             if "Tomás" in linea:
-                tomas_frecuencia[i] = tomas_frecuencia[i] + 1;
+                tomas_frecuencia[i] = tomas_frecuencia[i] + 1
                 tomas+=1
                 #print("tomas = ", tomas)
             if "Manuel Dios Campos"   in linea:
@@ -103,9 +105,9 @@ def contar():
     #frec_acumulada[i] = frec_acumulada[i] / (i +1)
 
 
-    #crear_archivo("Manu     ", manu_frecuencia  )
-    #crear_archivo("Tomas    ", tomas_frecuencia )
-    #crear_archivo("Jesus_acumulado    ", frec_acumulada )
+    crear_archivo("Manu", manu_frecuencia  )
+    crear_archivo("Tomas", tomas_frecuencia )
+    crear_archivo("jesus", jesus_frecuencia )
 
     #preguntar_dia(manu_frecuencia, tomas_frecuencia, jesus_frecuencia, 51)
 
