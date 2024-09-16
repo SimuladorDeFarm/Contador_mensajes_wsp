@@ -1,11 +1,12 @@
 from functions.crear_archivo import crear_archivo
 from functions.es_fecha  import es_fecha
-
+from functions.contar_dias import contar_dias
 
 #abre el archivo con el chat, en un futuro debo modularizar el nombre
 archivo = open("Chat.txt", "r")
 
 
+#print(contar_dias())
 
 # ask how many times someone speaked in one day
 # pregunta cantas veces hablo cada uno un dia en concreto
@@ -15,6 +16,9 @@ def preguntar_dia(manu, tomas, jesus, dia):
     print("manu hablo: ", manu[dia])
     print("tomas hablo: ", tomas[dia])
     print("jesus hablo: ", jesus[dia])
+
+
+
 
 
 
