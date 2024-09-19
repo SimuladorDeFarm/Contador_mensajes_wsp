@@ -1,6 +1,8 @@
 from functions.crear_archivo import crear_archivo
 from functions.es_fecha  import es_fecha
 from functions.contar_dias import contar_dias
+from functions.crear_archivo import recorre_crear_archivo
+
 
 #abre el archivo con el chat, en un futuro debo modularizar el nombre
 archivo = open("Chat.txt", "r")
@@ -9,16 +11,6 @@ archivo = open("Chat.txt", "r")
 
 # ask how many times someone speaked in one day
 # pregunta cantas veces hablo cada uno un dia en concreto
-def preguntar_dia(manu, tomas, jesus, dia):
-
-    print("Dia ", dia)
-    print("manu hablo: ", manu[dia])
-    print("tomas hablo: ", tomas[dia])
-    print("jesus hablo: ", jesus[dia])
-
-
-
-
 
 
 def contar():
@@ -26,11 +18,6 @@ def contar():
     personas = ["Tomás","Manuel Dios Campos", "Jesus Gomez", "Lukas Santi Exdev Linux Alumno Destacado Sangria"]
     #print(len(personas))
 
-
-
-    tomas   = 0 #total de veces que hablo tomas
-    manu    = 0 #total de veces que hablo manu
-    jesus   = 0 ##total de veces que hablo jesus
 
     # *300 es el largo del array, debo cambiarlo por la cantidad de dias trasncurren
 
@@ -102,21 +89,8 @@ def contar():
 
     archivo.close()
 
-    for fila in frecuencia:
-        print(fila)
 
-    array_aux = [0] * n
-    z = 0
-    x = 0
-    while z < j:
-        x = 0
-        while x < n:
-            array_aux[x] = frecuencia[z][x]
-            x+=1
-
-        print(array_aux)
-        crear_archivo(personas[z], array_aux, n)
-        z+=1
+    recorre_crear_archivo(personas, frecuencia, j, n)
 
 
 contar()
