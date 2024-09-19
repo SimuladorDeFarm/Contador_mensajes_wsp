@@ -1,8 +1,8 @@
-from functions.crear_archivo import crear_archivo
-from functions.es_fecha  import es_fecha
-from functions.contar_dias import contar_dias
-from functions.crear_archivo import recorre_crear_archivo
-
+from functions.crear_archivo    import crear_archivo
+from functions.es_fecha         import es_fecha
+from functions.contar_dias      import contar_dias
+from functions.crear_archivo    import recorre_crear_archivo
+from functions.recoger_dia      import recoger_dia
 
 #abre el archivo con el chat, en un futuro debo modularizar el nombre
 archivo = open("Chat.txt", "r")
@@ -18,8 +18,6 @@ def contar():
     personas = ["Tomás","Manuel Dios Campos", "Jesus Gomez", "Lukas Santi Exdev Linux Alumno Destacado Sangria"]
     #print(len(personas))
 
-
-    # *300 es el largo del array, debo cambiarlo por la cantidad de dias trasncurren
 
     j = len(personas)
     n = contar_dias()
@@ -38,7 +36,6 @@ def contar():
 
  
     linea = archivo.readline()
-    # Verificar si la palabra "tomas" está en el string
 
     while linea:
 
@@ -47,23 +44,25 @@ def contar():
          archivo, asique en vez de aparecer fecha, hora, persona, mensaje solo parece
          mensaje ej: linea 22 del archivo, 
         '''
-        fecha_v = linea.split(",") 
-        fecha = fecha_v[0]
 
         '''
         para solucionar el problema anterior hay que identificar cuales son
         las linas reales y las que que contienen error, las lineas reales
-        inician co  fecha en formato dd/mm/yyyy por lo que creamos una funcion
+        inician con  fecha en formato dd/mm/yyyy por lo que creamos una funcion
         que resive como parametro la fecha (todo el contenido del string hasta la primera ",") y en el caso de ser una linea real el programa se ejecuta, sino
         entonces no hace nada y pasa a la siguiente linea del archivo
+
+        ej: 30/12/2024              -> se ejecuta
+            todos tontos menos yo   -> No se ejecuta y pasa a la siguiente linea 
         '''
+        fecha_v = linea.split(",") 
+        fecha = fecha_v[0]
+        
         if es_fecha(fecha) == True:
 
             # Usar split para dividir el string por "/"            
             dia_anterior = dia 
-
-            dia_vector = linea.split("/")
-            dia = dia_vector[0] #guarda el dia ej 24/12/2024 -> dia = 24
+            dia = recoger_dia(linea)
             
             
             # el dia cambio cuando el dia actual y el anterior son diferentes
@@ -71,7 +70,7 @@ def contar():
                 i+=1
                 #frec_acumulada[i] = frec_acumulada[i-1]
                 #frec_acumulada[i-1] = frec_acumulada[i-1] / i
-                
+                 
                 cantidad_dias+=1
             
             z = 0
@@ -90,7 +89,7 @@ def contar():
     archivo.close()
 
 
-    recorre_crear_archivo(personas, frecuencia, j, n)
+    #recorre_crear_archivo(personas, frecuencia, j, n)
 
 
 contar()
