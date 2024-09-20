@@ -3,6 +3,7 @@ from functions.es_fecha         import es_fecha
 from functions.contar_dias      import contar_dias
 from functions.crear_archivo    import recorre_crear_archivo
 from functions.recoger_dia      import recoger_dia
+from functions.recoger_fecha    import recoger_fecha
 
 #abre el archivo con el chat, en un futuro debo modularizar el nombre
 archivo = open("Chat.txt", "r")
@@ -55,8 +56,8 @@ def contar():
         ej: 30/12/2024              -> se ejecuta
             todos tontos menos yo   -> No se ejecuta y pasa a la siguiente linea 
         '''
-        fecha_v = linea.split(",") 
-        fecha = fecha_v[0]
+        #fecha_v = linea.split(",") 
+        fecha = recoger_fecha(linea)
         
         if es_fecha(fecha) == True:
 
