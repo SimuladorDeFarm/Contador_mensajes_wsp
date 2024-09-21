@@ -6,7 +6,11 @@ from functions.recoger_dia      import recoger_dia
 from functions.recoger_fecha    import recoger_fecha
 
 
+#agrega el nombre del archivo sin la extencion
+#agrega el nombre de los integrantes del grupo (no uses emojis)
+
 nombreArchivo = "Chat"
+personas = ["Tomás","Manuel Dios Campos", "Jesus Gomez"]
 
 #abre el archivo con el chat, en un futuro debo modularizar el nombre
 archivo = open(f'{nombreArchivo}.txt', "r")
@@ -19,7 +23,6 @@ archivo = open(f'{nombreArchivo}.txt', "r")
 
 def contar():
     
-    personas = ["Tomás","Manuel Dios Campos", "Jesus Gomez"]
     #print(len(personas))
 
 
