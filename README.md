@@ -3,6 +3,9 @@
 ## Resumen
 Herramienta escrita en python que genera estadisticas de mensajes de chats de 
 whatapp 
+genera:
+- frecuencia de mensajes por dia de cada integrantes
+- frecuencia total de mensajes
 
 ## Privacidad y Seguridad
 Para el uso de este script es necesario que uses un chat exportado de whatsapp,
