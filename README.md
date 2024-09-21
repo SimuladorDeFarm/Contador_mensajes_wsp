@@ -4,19 +4,55 @@
 Herramienta escrita en python que genera estadisticas de mensajes de chats de 
 whatapp 
 
+## Privacidad y Seguridad
+Para el uso de este script es necesario que uses un chat exportado de whatsapp,
+El programa no recoplina ningun tipo de informacion y solo se ejectua localmente.
+Al exportar tu chat de whatsapp se precavido, no lo compartas con nadie y por el amor de 
+dios o el dios en que creas no lo subas por error a github o a otra plataforma
+al estar en archivo .txt es visible para cualquier persona
+
 ## Requistos:
 - Poseer chat en formato .txt [como exportar chats de WhatsApp](https://faq.whatsapp.com/1180414079177245/?locale=ca_ES&cms_platform=android)
 - Tener python instalado en la maquina
 - Tener python-pandas python-openpyxl
 - Editor de codigo a gusto
 
-## Como instalar
+## Instalar
 
-'''
-git clone https://github.com/SimuladorDeFarm/Contador_mensajes_wsp.git
-'''
+#### Linux
+´´´
+$ git clone https://github.com/SimuladorDeFarm/Contador_mensajes_wsp.git
+$ cd Contador_mensajes_wsp
+$ chmod +x contador_msj.py
+´´´
+Desconozco como ejecutar un archivo .py en otros sitemas operativos
 
+## instrucciones
 
+¡IMPORTANTE!:
+  Evita tener emojis o caracteres especiales en los nombre de los contactos
+  cambia el nombre de tu contacto y despues de eso exporta el chat de wsp.
+  Tu nombre de ususario es el que tienes puesto en tu perfil de wsp.
+  En el caso de no tener agregado un contacto desconozco si el nombre que 
+  tendra en el archivo será su nombre de usuario o su numero telefonico 
+
+- Guarda el chat de whatsapp en tu maquina local
+- Mueve el archivo .txt a la carpeta contar_msj
+- Al inicio del archivo modifica la variable nombreArchivo para que calse
+ con tu archivo, no coloques el formato
+  ´´´
+  nombreArchivo = "nombreDelArchivoSinformato"
+  ´´´
+- Modifica el vector personas y añade los integrantes del grupo o a otra
+persona del chat
+  ´´´
+  personas = ["persona1","persona2", "persona3"... etc]
+
+  ´´´
+- Ejecuta el archivo con el siguiente comando
+´´´
+  $ python contar_msj.py
+´´´
 ---------------------------------------------------------------------------------
 Mi amigo se consiguio polola y dejo de pescar tanto el grupo asique esta herramienta
 es para tener datos solidos de su dejadez y mostrarle un grafico en toda la cara que 
