@@ -67,11 +67,10 @@ los datos variarian dependiendo de la version.
 ![imagen](https://github.com/user-attachments/assets/2d8103a7-f79c-4b1e-899f-795491f93856)
 
 ---------------------------------------------------------------------------------
-Mi amigo se consiguio polola y dejo de pescar tanto el grupo asique esta herramienta
-es para tener datos solidos de su dejadez y mostrarle un grafico en toda la cara que 
-demuestra su gosting
+Mi amigo ahora esta con una gata rompe hogares y dejo de pescar el grupo de wsp asique esta herramienta
+es para tener datos solidos de su dejadez y ghosting
 
-quiero mucho a mi amigo
+
 ![imagen](https://github.com/user-attachments/assets/adccfb95-8087-4e36-a121-3ba983f1a749)
-
+quiero mucho a mi amigo 
 
