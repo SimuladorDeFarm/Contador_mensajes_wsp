@@ -59,6 +59,7 @@ los datos variarian dependiendo de la version.
 
 ## screenshots 
 
+![imagen](https://github.com/user-attachments/assets/2d8103a7-f79c-4b1e-899f-795491f93856)
 
 ---------------------------------------------------------------------------------
 Mi amigo se consiguio polola y dejo de pescar tanto el grupo asique esta herramienta
