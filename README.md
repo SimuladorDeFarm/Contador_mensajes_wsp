@@ -40,15 +40,15 @@ Desconozco como ejecutar un archivo .py en otros sitemas operativos
 - Mueve el archivo .txt a la carpeta contar_msj
 - Al inicio del archivo modifica la variable nombreArchivo para que calse
  con tu archivo, no coloques el formato
-  ```bash
+```bash
   nombreArchivo = "nombreDelArchivoSinformato"
-  ´´´
+```
 - Modifica el vector personas y añade los integrantes del grupo o a otra
 persona del chat
-  ```bash
+```bash
   personas = ["persona1","persona2", "persona3"... etc]
 
-  ```
+```
 - Ejecuta el archivo con el siguiente comando
 ```bash
   $ python contar_msj.py
