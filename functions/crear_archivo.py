@@ -28,5 +28,3 @@ def recorre_crear_archivo(personas, frecuencia, j, n):
         crear_archivo(personas[z], array_aux, n)
         z+=1
 
-
-

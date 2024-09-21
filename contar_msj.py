@@ -5,8 +5,11 @@ from functions.crear_archivo    import recorre_crear_archivo
 from functions.recoger_dia      import recoger_dia
 from functions.recoger_fecha    import recoger_fecha
 
+
+nombreArchivo = "Chat"
+
 #abre el archivo con el chat, en un futuro debo modularizar el nombre
-archivo = open("Chat.txt", "r")
+archivo = open(f'{nombreArchivo}.txt', "r")
 
 #print(contar_dias())
 
@@ -16,13 +19,14 @@ archivo = open("Chat.txt", "r")
 
 def contar():
     
-    personas = ["Tomás","Manuel Dios Campos", "Jesus Gomez", "Lukas Santi Exdev Linux Alumno Destacado Sangria"]
+    personas = ["Tomás","Manuel Dios Campos", "Jesus Gomez"]
     #print(len(personas))
 
 
     j = len(personas)
-    n = contar_dias()
-    frecuencia = [[0] * n for _ in range(j)]
+    n = contar_dias(nombreArchivo)
+    frecuencia = [[0] * n for _ in range(j)] #vector de 2 dimenciones
+    frecuencia_total = [0] * n
 
     tomas_frecuencia = [0] * n
     manu_frecuencia = [0] * n
@@ -78,9 +82,12 @@ def contar():
             while z < j :
 
                 if  personas[z] in linea:
-                    frecuencia[z][i] = frecuencia[z][i] +1   
-                
+                    frecuencia[z][i] = frecuencia[z][i] + 1   
+                    frecuencia_total[i] = frecuencia_total[i] + 1
+                    #print(i)
+                    #print(n)
                 z+=1 
+
 
 
 
@@ -89,9 +96,11 @@ def contar():
 
     archivo.close()
 
+    print(frecuencia_total)
+    
 
-    #recorre_crear_archivo(personas, frecuencia, j, n)
-
+    recorre_crear_archivo(personas, frecuencia, j, n)
+    crear_archivo("frecuencia_total", frecuencia_total, n)
 
 contar()
 

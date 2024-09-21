@@ -1,11 +1,11 @@
 from functions.es_fecha  import es_fecha
 
-archivo = open("Chat.txt", "r")
 
 
 
-def contar_dias():
-    
+def contar_dias(nombreArchivo):
+
+    archivo = open(f'{nombreArchivo}.txt', "r")
 
     dia = "3" #inizializa dia con el numero del primer dia, debo estandarizarlo
     cantidad_dias = 0 #cuenta la cantidad de dias que van trasncurriendo
