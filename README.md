@@ -41,7 +41,7 @@ Desconozco como ejecutar un archivo .py en otros sitemas operativos
   tendra en el archivo será su nombre de usuario o su numero telefonico 
 
 - Guarda el chat de whatsapp en tu maquina local
-- Mueve el archivo .txt a la carpeta contar_msj
+- Mueve el archivo .txt a la carpeta `/contar_msj`
 - Al inicio del archivo modifica la variable nombreArchivo para que calse
  con tu archivo, no coloques el formato
 ```bash
