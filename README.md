@@ -27,6 +27,7 @@ al estar en archivo .txt es visible para cualquier persona
 ```bash
 $ git clone https://github.com/SimuladorDeFarm/Contador_mensajes_wsp.git
 $ cd Contador_mensajes_wsp
+$ mkdir tablas
 $ chmod +x contador_msj.py
 ```
 Desconozco como ejecutar un archivo .py en otros sitemas operativos
@@ -57,7 +58,7 @@ persona del chat
 ```bash
   $ python contar_msj.py
 ```
-Al ejecutar el programa en la carpeta `/tablas` se crearan tres tantos
+Al ejecutar el programa en la carpeta `/tablas` se crearan tantos
 archivos .xlsx como personas ingresadas y tambien uno con frecuancia total,
 los datos variarian dependiendo de la version.
 
