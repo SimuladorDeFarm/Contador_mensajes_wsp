@@ -4,7 +4,7 @@
 Herramienta escrita en python que genera estadisticas de mensajes de chats de 
 whatapp 
 
-genera:
+genera archivos xlsx de:
 - frecuencia de mensajes por dia de cada integrantes
 - frecuencia total de mensajes
 
