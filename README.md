@@ -20,11 +20,11 @@ al estar en archivo .txt es visible para cualquier persona
 ## Instalar
 
 #### Linux
-´´´bash
+```bash
 $ git clone https://github.com/SimuladorDeFarm/Contador_mensajes_wsp.git
 $ cd Contador_mensajes_wsp
 $ chmod +x contador_msj.py
-´´´
+```
 Desconozco como ejecutar un archivo .py en otros sitemas operativos
 
 ## instrucciones
@@ -40,19 +40,19 @@ Desconozco como ejecutar un archivo .py en otros sitemas operativos
 - Mueve el archivo .txt a la carpeta contar_msj
 - Al inicio del archivo modifica la variable nombreArchivo para que calse
  con tu archivo, no coloques el formato
-  ´´´bash
+  ```bash
   nombreArchivo = "nombreDelArchivoSinformato"
-  ´´´bash
+  ´´´
 - Modifica el vector personas y añade los integrantes del grupo o a otra
 persona del chat
-  ´´´bash
+  ```bash
   personas = ["persona1","persona2", "persona3"... etc]
 
-  ´´´bash
+  ```
 - Ejecuta el archivo con el siguiente comando
-´´´bash
+```bash
   $ python contar_msj.py
-´´´bash
+```
 ---------------------------------------------------------------------------------
 Mi amigo se consiguio polola y dejo de pescar tanto el grupo asique esta herramienta
 es para tener datos solidos de su dejadez y mostrarle un grafico en toda la cara que 
