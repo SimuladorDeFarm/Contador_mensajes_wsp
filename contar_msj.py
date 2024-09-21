@@ -25,6 +25,7 @@ def contar():
     
     #print(len(personas))
 
+    linea = archivo.readline()
 
     j = len(personas)
     n = contar_dias(nombreArchivo)
@@ -37,13 +38,13 @@ def contar():
 
     frec_acumulada = [0] * n
 
-    dia = "3" #inizializa dia con el numero del primer dia, debo estandarizarlo
+    
+    dia = recoger_dia(linea) #inizializa dia con el numero del primer dia, debo estandarizarlo
     cantidad_dias = 0 #cuenta la cantidad de dias que van trasncurriendo
     fecha_anterior = "0" #guarda el numero del dia anterior
     i = 0 #i es la posicion de los arreglos
 
  
-    linea = archivo.readline()
 
     while linea:
 
