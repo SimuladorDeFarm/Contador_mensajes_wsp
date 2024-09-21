@@ -24,7 +24,7 @@ al estar en archivo .txt es visible para cualquier persona
 $ git clone https://github.com/SimuladorDeFarm/Contador_mensajes_wsp.git
 $ cd Contador_mensajes_wsp
 $ chmod +x contador_msj.py
-´´´bash
+´´´
 Desconozco como ejecutar un archivo .py en otros sitemas operativos
 
 ## instrucciones
