@@ -53,6 +53,13 @@ persona del chat
 ```bash
   $ python contar_msj.py
 ```
+Al ejecutar el programa en la carpeta `/tablas` se crearan tres tantos
+archivos .xlsx como personas ingresadas y tambien uno con frecuancia total,
+los datos variarian dependiendo de la version.
+
+## screenshots 
+
+
 ---------------------------------------------------------------------------------
 Mi amigo se consiguio polola y dejo de pescar tanto el grupo asique esta herramienta
 es para tener datos solidos de su dejadez y mostrarle un grafico en toda la cara que 
