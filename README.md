@@ -32,6 +32,10 @@ $ chmod +x contador_msj.py
 ```
 Desconozco como ejecutar un archivo .py en otros sitemas operativos
 
+#### Windows
+ [
+Instrucciones para usar en Windows](https://youtu.be/191TICTVD5U?si=3glJYnkBIW0aQwAd)
+
 ## instrucciones
 
 ¡IMPORTANTE!:
