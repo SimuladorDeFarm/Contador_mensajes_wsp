@@ -23,12 +23,15 @@ al estar en archivo .txt es visible para cualquier persona
 
 ## Instalar
 
+Puedes ejecutar manualmente los comandos o usar el archivo "script.sh" si es que 
+sabes un poco de bashscriptig
+
 #### Linux
 ```bash
 $ git clone https://github.com/SimuladorDeFarm/Contador_mensajes_wsp.git
-$ cd Contador_mensajes_wsp
+$ cd Contador_mensajes_wsp 
 $ mkdir tablas
-$ chmod +x contador_msj.py
+$ chmod +x contar_msj.py
 ```
 Desconozco como ejecutar un archivo .py en otros sitemas operativos
 
