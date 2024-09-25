@@ -4,6 +4,7 @@ from functions.contar_dias      import contar_dias
 from functions.crear_archivo    import recorre_crear_archivo
 from functions.recoger_dia      import recoger_dia
 from functions.recoger_fecha    import recoger_fecha
+from functions.graficar         import graficar
 
 
 #agrega el nombre del archivo sin la extencion
@@ -19,6 +20,8 @@ archivo = open(f'{nombreArchivo}.txt', "r")
 
 # ask how many times someone speaked in one day
 # pregunta cantas veces hablo cada uno un dia en concreto
+
+
 
 
 def contar():
@@ -102,9 +105,10 @@ def contar():
 
     print(frecuencia_total)
     
-
-    recorre_crear_archivo(personas, frecuencia, j, n)
-    crear_archivo("frecuencia_total", frecuencia_total, n)
+    graficar(frecuencia_total)
+    
+    #recorre_crear_archivo(personas, frecuencia, j, n)
+    #crear_archivo("frecuencia_total", frecuencia_total, n)
 
 contar()
 
